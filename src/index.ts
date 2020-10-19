@@ -1,9 +1,14 @@
+import colors from "colors";
 import commander from 'commander';
 
-commander
+const command = commander
     .version("0.1.0")
-    .option("-p, --peppers", "Add peppers")
-    .option("-P, --pineapple", "Add pineapple")
-    .option("-b, --bbq-sauce", "Add bbq sauce")
-    .option("-c, --cheese [type]", "Add the specified type of cheese [marble]", "marble")
-    .parse(process.argv)
+    .option("-c, --city [name]", "Add city name")
+    .parse(process.argv);
+
+if(process.argv.slice(2).length === 0) {
+    command.outputHelp(colors.red);
+    process.exit();
+}
+
+console.log(command.city);
