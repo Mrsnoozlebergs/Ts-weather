@@ -10,5 +10,3 @@ if(process.argv.slice(2).length === 0) {
     command.outputHelp(colors.red);
     process.exit();
 }
-
-console.log(command.city);
