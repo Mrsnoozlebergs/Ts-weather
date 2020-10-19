@@ -1,10 +1,10 @@
 {
-  "name": "ts-weather",
+  "name": "ts-weather-shuangzhou",
   "version": "1.0.0",
   "description": "a CLI application by TypeScript for weather",
   "main": "index.js",
   "bin": {
-    "bef": "./src/index.ts"
+    "bef": "./bin/index.js"
   },
   "dependencies": {
     "@types/node": "^14.11.10",
