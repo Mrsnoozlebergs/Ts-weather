@@ -73,7 +73,7 @@ async function getWeather(city: string, type: string = 'base') {
             const forecasts = response.data.forecasts[0];
             log(colors.yellow(`查询时间：${forecasts.reporttime}`));
             log(colors.white(`地点：${forecasts.province} ${forecasts.city}`));
-            forecasts.casts.map(( item ) => {
+            forecasts.casts.map(( item: { date: any; dayweather: any; daytemp: any; nightweather: any; nighttemp: any; } ) => {
                 log(colors.white(`${item.date}：`),colors.green(`『日间天气：${item.dayweather},日间温度：${item.daytemp}摄氏度,夜间天气：${item.nightweather},夜间温度：${item.nighttemp}摄氏度』`));
             })
         }
