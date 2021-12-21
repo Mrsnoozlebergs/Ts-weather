@@ -1,6 +1,6 @@
 {
   "name": "ts-weather-shuangzhou",
-  "version": "1.0.1",
+  "version": "1.0.22",
   "description": "a CLI application by TypeScript for weather",
   "main": "index.js",
   "bin": {
