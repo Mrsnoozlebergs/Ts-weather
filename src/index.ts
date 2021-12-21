@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import axios, { AxiosResponse } from "axios";
 import colors from "colors";
 import commander from 'commander';
