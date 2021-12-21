@@ -1,4 +1,3 @@
-#!/usr/bin/env ts-node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -63,28 +62,28 @@ function getWeather(city, type) {
             switch (_b.label) {
                 case 0:
                     _b.trys.push([0, 2, , 3]);
-                    url = URL + "?city=" + encodeURI(city) + "&extensions=" + type + "&key=" + KEY;
+                    url = "".concat(URL, "?city=").concat(encodeURI(city), "&extensions=").concat(type, "&key=").concat(KEY);
                     return [4 /*yield*/, axios_1.default.get(url)];
                 case 1:
                     response = _b.sent();
                     if (response.data.lives) {
                         live = response.data.lives[0];
-                        console_1.log(colors_1.default.yellow(live.reporttime));
-                        console_1.log(colors_1.default.white(live.province + " " + city));
-                        console_1.log(colors_1.default.green(live.weather + " " + live.temperature + " \u5EA6"));
+                        (0, console_1.log)(colors_1.default.yellow(live.reporttime));
+                        (0, console_1.log)(colors_1.default.white("".concat(live.province, " ").concat(city)));
+                        (0, console_1.log)(colors_1.default.green("".concat(live.weather, " ").concat(live.temperature, " \u5EA6")));
                     }
                     else if (response.data.forecasts) {
                         forecasts = response.data.forecasts[0];
-                        console_1.log(colors_1.default.yellow("\u67E5\u8BE2\u65F6\u95F4\uFF1A" + forecasts.reporttime));
-                        console_1.log(colors_1.default.white("\u5730\u70B9\uFF1A" + forecasts.province + " " + forecasts.city));
+                        (0, console_1.log)(colors_1.default.yellow("\u67E5\u8BE2\u65F6\u95F4\uFF1A".concat(forecasts.reporttime)));
+                        (0, console_1.log)(colors_1.default.white("\u5730\u70B9\uFF1A".concat(forecasts.province, " ").concat(forecasts.city)));
                         forecasts.casts.map(function (item) {
-                            console_1.log(colors_1.default.white(item.date + "\uFF1A"), colors_1.default.green("\u300E\u65E5\u95F4\u5929\u6C14\uFF1A" + item.dayweather + ",\u65E5\u95F4\u6E29\u5EA6\uFF1A" + item.daytemp + "\u6444\u6C0F\u5EA6,\u591C\u95F4\u5929\u6C14\uFF1A" + item.nightweather + ",\u591C\u95F4\u6E29\u5EA6\uFF1A" + item.nighttemp + "\u6444\u6C0F\u5EA6\u300F"));
+                            (0, console_1.log)(colors_1.default.white("".concat(item.date, "\uFF1A")), colors_1.default.green("\u300E\u65E5\u95F4\u5929\u6C14\uFF1A".concat(item.dayweather, ",\u65E5\u95F4\u6E29\u5EA6\uFF1A").concat(item.daytemp, "\u6444\u6C0F\u5EA6,\u591C\u95F4\u5929\u6C14\uFF1A").concat(item.nightweather, ",\u591C\u95F4\u6E29\u5EA6\uFF1A").concat(item.nighttemp, "\u6444\u6C0F\u5EA6\u300F")));
                         });
                     }
                     return [3 /*break*/, 3];
                 case 2:
                     _a = _b.sent();
-                    console_1.log(colors_1.default.red('天气服务出现异常'));
+                    (0, console_1.log)(colors_1.default.red('天气服务出现异常'));
                     return [3 /*break*/, 3];
                 case 3: return [2 /*return*/];
             }
